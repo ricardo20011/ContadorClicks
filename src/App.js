@@ -1,5 +1,5 @@
 import Boton from './componentes/Boton';
-import Contador from './componentes/contador';
+import Contador from './componentes/Contador';
 import './App.css';
 import {useState} from 'react';
 
@@ -12,6 +12,15 @@ function App() {
   const restarClick = () => {
     setClicks(numClicks - 1);
   }
+
+  document.addEventListener('keyup', (event) => {
+    //var keyValue = event.key;
+    //var codeValue = event.code;
+    setClicks(numClicks + 1);
+    if(keyValue == "-"){
+      setClicks(numClicks - 1);
+    }
+  }, false);
 
   const reiniciarContador = () => {
     setClicks(0);
